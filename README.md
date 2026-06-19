@@ -1,29 +1,31 @@
-# He thong quan ly cong trinh thuy loi
+# Hệ thống quản lý công trình thủy lợi
 
-Ban remake theo kien truc:
+Đây là bản remake theo kiến trúc client-server, tách ứng dụng khỏi việc kết nối trực tiếp đến cơ sở dữ liệu.
 
-- `Waterworks.Web`: Blazor WebAssembly client cho trinh duyet.
-- `Waterworks.Api`: ASP.NET Core Web API.
-- `Waterworks.Maui`: .NET MAUI client cho desktop/mobile.
-- `Waterworks.Shared`: DTO/request/response dung chung.
-- `Waterworks.Data`: data access MVP hien dung SQLite local.
+## Kiến trúc
 
-## MVP hien co
+- `Waterworks.Web`: ứng dụng web Blazor WebAssembly chạy trên trình duyệt.
+- `Waterworks.Api`: ASP.NET Core Web API, xử lý đăng nhập và dữ liệu nghiệp vụ.
+- `Waterworks.Maui`: ứng dụng .NET MAUI cho desktop/mobile.
+- `Waterworks.Shared`: DTO, request, response dùng chung giữa client và API.
+- `Waterworks.Data`: lớp truy cập dữ liệu. MVP hiện dùng SQLite local.
 
-- Dang nhap demo: `admin` / `1234`.
-- Home/menu.
-- Danh sach cong trinh.
-- Them, sua, xoa cong trinh.
-- API CRUD cong trinh.
-- Docker deploy Web + API chung mot service.
+## Chức năng MVP
 
-## Chay local
+- Đăng nhập demo: `admin` / `1234`.
+- Trang Home/Menu.
+- Danh sách công trình.
+- Thêm, sửa, xóa công trình.
+- API CRUD công trình.
+- Docker deploy Web + API chung một service.
+
+## Chạy local
 
 ```powershell
 .\.dotnet-local\dotnet.exe run --project src\Waterworks.Api\Waterworks.Api.csproj --urls http://127.0.0.1:5188
 ```
 
-Mo:
+Mở trình duyệt tại:
 
 ```text
 http://127.0.0.1:5188
@@ -31,8 +33,8 @@ http://127.0.0.1:5188
 
 ## Deploy
 
-Repo co san `Dockerfile` va `render.yaml`. Xem chi tiet trong `docs/DEPLOY.md`.
+Repo có sẵn `Dockerfile` và `render.yaml`. Xem chi tiết trong `docs/DEPLOY.md`.
 
-## Ghi chu
+## Ghi chú
 
-`database/Database.sql` duoc giu lai lam schema tham khao khi migrate sang PostgreSQL/Neon/Supabase hoac SQL Server.
+`database/Database.sql` được giữ lại làm schema tham khảo khi migrate sang PostgreSQL/Neon/Supabase hoặc SQL Server.
