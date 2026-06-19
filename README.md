@@ -31,8 +31,8 @@ http://127.0.0.1:5188
 
 ## Deploy
 
-Repo co san `Dockerfile` va `render.yaml`. Xem chi tiet trong `DEPLOY.md`.
+Repo co san `Dockerfile` va `render.yaml`. Xem chi tiet trong `docs/DEPLOY.md`.
 
 ## Ghi chu
 
-`Database.sql` duoc giu lai lam schema tham khao khi migrate sang PostgreSQL/Neon/Supabase hoac SQL Server.
+`database/Database.sql` duoc giu lai lam schema tham khao khi migrate sang PostgreSQL/Neon/Supabase hoac SQL Server.

@@ -4,13 +4,13 @@
 
 - App goc la WPF .NET Framework 4.7.2. Ban WPF cu da duoc giu trong repo goc, khong dua vao repo remake nay.
 - Database cu la SQL Server Express `KTPM`.
-- Schema goc nam trong `Database.sql`.
+- Schema goc nam trong `database/Database.sql`.
 - Menu/quyen, controller va UI WPF cu chi dung lam tham khao tu repo goc.
 
 ## Huong migrate
 
 1. Tao solution moi `Waterworks.slnx` cho ban remake.
-2. Giu `Database.sql` lam schema tham khao.
+2. Giu `database/Database.sql` lam schema tham khao.
 3. Tach client MAUI khoi database: client chi goi HTTPS API.
 4. Dua schema/entity/DTO dung chung vao `Waterworks.Shared`.
 5. Dua truy cap database vao `Waterworks.Data`.
@@ -45,7 +45,7 @@
 
 ## Ghi chu database
 
-SQLite duoc dung cho buoc dau vi khong can cai SQL Server/PostgreSQL. `Database.sql` van la schema tham chieu. Khi deploy cloud, nen uu tien:
+SQLite duoc dung cho buoc dau vi khong can cai SQL Server/PostgreSQL. `database/Database.sql` van la schema tham chieu. Khi deploy cloud, nen uu tien:
 
 - PostgreSQL tren Neon/Supabase free tier neu can cloud nhanh, chi phi thap.
 - SQL Server neu muon giu gan schema T-SQL cu va da co moi truong SQL Server.

@@ -1,21 +1,23 @@
-<div class="top-row ps-3 navbar navbar-dark">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="">Waterworks</a>
-        <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
-            <span class="navbar-toggler-icon"></span>
+<div class="nav-header">
+    <div class="brand-row">
+        <a class="brand" href="">Waterworks</a>
+        <button title="Navigation menu" class="menu-toggle" @onclick="ToggleNavMenu">
+            <span></span>
+            <span></span>
+            <span></span>
         </button>
     </div>
 </div>
 
 <div class="@NavMenuCssClass nav-scrollable" @onclick="ToggleNavMenu">
-    <nav class="nav flex-column">
-        <div class="nav-item px-3">
+    <nav class="nav-list">
+        <div class="nav-item">
             <NavLink class="nav-link" href="" Match="NavLinkMatch.All">Home</NavLink>
         </div>
-        <div class="nav-item px-3">
+        <div class="nav-item">
             <NavLink class="nav-link" href="login">Login</NavLink>
         </div>
-        <div class="nav-item px-3">
+        <div class="nav-item">
             <NavLink class="nav-link" href="congtrinh">Cong trinh</NavLink>
         </div>
     </nav>
