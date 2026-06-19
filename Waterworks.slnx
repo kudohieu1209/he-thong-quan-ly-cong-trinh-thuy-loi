@@ -1,0 +1,9 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Waterworks.Api/Waterworks.Api.csproj" />
+    <Project Path="src/Waterworks.Data/Waterworks.Data.csproj" />
+    <Project Path="src/Waterworks.Maui/Waterworks.Maui.csproj" />
+    <Project Path="src/Waterworks.Shared/Waterworks.Shared.csproj" />
+    <Project Path="src/Waterworks.Web/Waterworks.Web.csproj" />
+  </Folder>
+</Solution>

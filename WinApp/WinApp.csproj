@@ -1,0 +1,317 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{897D371C-FAC8-4711-9A23-4ED46A663D0D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>WinApp</RootNamespace>
+    <AssemblyName>WinApp</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
+      <HintPath>..\packages\BouncyCastle.Cryptography.2.6.2\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
+    </Reference>
+    <Reference Include="GMap.NET.Core, Version=1.7.5.0, Culture=neutral, PublicKeyToken=b85b9027b614afef, processorArchitecture=MSIL">
+      <HintPath>..\packages\GMap.NET.WindowsForms.1.7.5\lib\net40\GMap.NET.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="GMap.NET.WindowsForms, Version=1.7.5.0, Culture=neutral, PublicKeyToken=b85b9027b614afef, processorArchitecture=MSIL">
+      <HintPath>..\packages\GMap.NET.WindowsForms.1.7.5\lib\net40\GMap.NET.WindowsForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf, Version=3.32.0.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Protobuf.3.32.0\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4, Version=1.3.8.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Compression.LZ4.1.3.8\lib\net462\K4os.Compression.LZ4.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4.Streams, Version=1.3.8.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Compression.LZ4.Streams.1.3.8\lib\net462\K4os.Compression.LZ4.Streams.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Hash.xxHash, Version=1.0.8.0, Culture=neutral, PublicKeyToken=32cd54395057cec3, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Hash.xxHash.1.0.8\lib\net462\K4os.Hash.xxHash.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.5.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=9.5.0.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.9.5.0\lib\net462\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json.Bson, Version=1.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.Bson.1.0.3\lib\net45\Newtonsoft.Json.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.ConfigurationManager, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Configuration.ConfigurationManager.8.0.0\lib\net462\System.Configuration.ConfigurationManager.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Pipelines, Version=5.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Pipelines.5.0.2\lib\net461\System.IO.Pipelines.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+    <Reference Include="ZstdSharp, Version=0.8.6.0, Culture=neutral, PublicKeyToken=8d151af33a4ad5cf, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZstdSharp.Port.0.8.6\lib\net462\ZstdSharp.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Actors\User.cs" />
+    <Compile Include="Controller\AdminController.cs" />
+    <Compile Include="Controller\BanDoConTroller.cs" />
+    <Compile Include="Controller\CapCongTrinhController.cs" />
+    <Compile Include="Controller\ChiTietKiThuatController.cs" />
+    <Compile Include="Controller\KetQuaTuoiController.cs" />
+    <Compile Include="Controller\KyQuyHoachController.cs" />
+    <Compile Include="Controller\LichSuBaoTriController.cs" />
+    <Compile Include="Controller\ThongKeController.cs" />
+    <Compile Include="Controller\VanBanPhapLyController.cs" />
+    <Compile Include="Controller\VuMuaController.cs" />
+    <Compile Include="Controller\BaseController.cs" />
+    <Compile Include="Controller\HanhChinhController.cs" />
+    <Compile Include="Controller\HomeController.cs" />
+    <Compile Include="Controller\LichSuTruyCapController.cs" />
+    <Compile Include="Controller\LoaiCongTrinhController.cs" />
+    <Compile Include="Controller\NhatKyVanHanhControllers.cs" />
+    <Compile Include="Controller\TaiLieuController.cs" />
+    <Compile Include="Views\BanDo\Index.cs" />
+    <Compile Include="Views\BanDo\MapControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\ChiTietKe\Index.cs" />
+    <Compile Include="Views\ChiTietDuongOng\Index.cs" />
+    <Compile Include="Views\ChiTietKenhMuong\Index.cs" />
+    <Compile Include="Views\ChiTietTramBom\Index.cs" />
+    <Compile Include="Views\ChiTietHoChua\Index.cs" />
+    <Compile Include="Views\ChiTietDapTran\Index.cs" />
+    <Compile Include="Views\KyQuyHoach\Index.cs" />
+    <Compile Include="Views\LichSuTruyCap\Index.cs" />
+    <Compile Include="Views\LoaiCongTrinh\Index.cs" />
+    <Compile Include="Views\CapCongTrinh\Index.cs" />
+    <Compile Include="Views\NhatKyVanHanh\Index.cs" />
+    <Compile Include="Views\TaiLieu\Index.cs" />
+    <Compile Include="Views\ThongKe\Index.cs" />
+    <Compile Include="Views\VanBanPhapLy\Index.cs" />
+    <Compile Include="Views\VuMua\Index.cs" />
+    <Compile Include="Views\LichSuBaoTri\Index.cs" />
+    <Compile Include="Views\KetQuaTuoi\Index.cs" />
+    <Compile Include="Controller\LoginController.cs" />
+    <Compile Include="Controller\MeController.cs" />
+    <Compile Include="Controller\MigrateController.cs" />
+    <Compile Include="Controller\MigrateResult.cs" />
+    <Compile Include="Controller\CongTrinhController.cs" />
+    <Compile Include="Controller\TaiKhoanController.cs" />
+    <Compile Include="Models\%28Document%29.cs" />
+    <Compile Include="Models\Account.cs" />
+    <Compile Include="Models\Migration\CodeGenerator.cs" />
+    <Compile Include="Models\Config.cs" />
+    <Compile Include="Models\DonVi.cs" />
+    <Compile Include="Models\MigrateResult.cs" />
+    <Compile Include="Models\Migration\Provider.cs" />
+    <Compile Include="Models\UpdateContext.cs" />
+    <Compile Include="Views\Admin\Test.cs" />
+    <Compile Include="Views\BaseView.cs" />
+    <Compile Include="Views\HanhChinh\DonViSelector.xaml.cs">
+      <DependentUpon>DonViSelector.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Home\Admin.cs" />
+    <Compile Include="Views\Home\Developer.cs" />
+    <Compile Include="Views\HanhChinh\HanhChinhManagerView.cs" />
+    <Compile Include="Views\Home\Loading.cs" />
+    <Compile Include="Views\Me\ProfileView.cs" />
+    <Compile Include="Views\Migrate\Index.cs" />
+    <Compile Include="Views\Migrate\MigrateLayout.xaml.cs">
+      <DependentUpon>MigrateLayout.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TaiKhoan\TaiKhoanManagerView.cs" />
+    <Compile Include="Views\CongTrinh\Index.cs" />
+    <Compile Include="Views\_layouts\PageHeader.xaml.cs">
+      <DependentUpon>PageHeader.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\_layouts\DataListViewLayout.xaml.cs">
+      <DependentUpon>DataListViewLayout.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Home\Index.cs" />
+    <Compile Include="Views\Login\Login.cs" />
+    <Compile Include="Views\Migrate\CodeViewer.xaml.cs">
+      <DependentUpon>CodeViewer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Migrate\Gen.cs" />
+    <Compile Include="Views\_layouts\MainUserLayout.xaml.cs">
+      <DependentUpon>MainUserLayout.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\_layouts\FormViewLayout.xaml.cs">
+      <DependentUpon>FormViewLayout.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\_controls\MyEditors.cs" />
+    <Compile Include="Views\_controls\MyTableView.cs" />
+    <Compile Include="Views\_controls\MyElements.cs" />
+    <Compile Include="VST\Data\BsonDataMap.cs" />
+    <Compile Include="VST\Data\Collection.cs" />
+    <Compile Include="VST\Data\Database.cs" />
+    <Compile Include="VST\Data\Document.cs" />
+    <Compile Include="VST\Data\ObjectId.cs" />
+    <Compile Include="VST\Json\%28MD5%29.cs" />
+    <Compile Include="VST\Json\DataContext.cs" />
+    <Compile Include="VST\Json\Document.cs" />
+    <Compile Include="VST\Json\Network.cs" />
+    <Compile Include="VST\Json\ObjectExtension.cs" />
+    <Compile Include="VST\Json\ShareMemory.cs" />
+    <Compile Include="VST\Json\StringExtension.cs" />
+    <Compile Include="VST\Json\TypeExtension.cs" />
+    <Compile Include="VST\Json\VietUnicode.cs" />
+    <Compile Include="VST\MVC\ActionContext.cs" />
+    <Compile Include="VST\MVC\ActionResult.cs" />
+    <Compile Include="VST\MVC\Controller.cs" />
+    <Compile Include="VST\MVC\Engine.cs" />
+    <Compile Include="VST\MVC\RequestContext.cs" />
+    <Compile Include="VST\MVC\Session.cs" />
+    <Compile Include="VST\MVC\View.cs" />
+    <Compile Include="VST\MVC\ViewDataDictionary.cs" />
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Views\HanhChinh\DonViSelector.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Migrate\MigrateLayout.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\_layouts\PageHeader.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\_layouts\DataListViewLayout.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Migrate\CodeViewer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\_layouts\MainUserLayout.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\_layouts\FormViewLayout.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="App_Data\Actions.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="App_Data\Config.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="App_Data\301124_version moi.txt" />
+    <Content Include="SQL\Procs.sql" />
+    <Content Include="SQL\Tables.sql" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

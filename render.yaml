@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: waterworks
+    runtime: docker
+    plan: free
+    autoDeploy: true
+    healthCheckPath: /api/health
+    envVars:
+      - key: ASPNETCORE_ENVIRONMENT
+        value: Production
+      - key: ASPNETCORE_URLS
+        value: http://0.0.0.0:8080
+      - key: ConnectionStrings__Waterworks
+        value: Data Source=/tmp/waterworks.local.db

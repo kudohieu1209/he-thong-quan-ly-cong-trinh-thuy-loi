@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Waterworks.Maui.Views.CongTrinhEditPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Sua cong trinh">
+    <ScrollView>
+        <VerticalStackLayout Padding="18" Spacing="10">
+            <Entry x:Name="TenEntry" Placeholder="Ten cong trinh" />
+            <Entry x:Name="MaHieuEntry" Placeholder="Ma hieu" />
+            <Entry x:Name="DiaDiemEntry" Placeholder="Dia diem" />
+            <Entry x:Name="NamEntry" Placeholder="Nam xay dung" Keyboard="Numeric" />
+            <Entry x:Name="TrangThaiEntry" Placeholder="Trang thai" />
+            <Editor x:Name="MoTaEditor" Placeholder="Mo ta" AutoSize="TextChanges" HeightRequest="100" />
+            <Button Text="Luu" Clicked="OnSaveClicked" />
+            <Label x:Name="MessageLabel" TextColor="#B91C1C" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

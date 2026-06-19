@@ -1,0 +1,31 @@
+@inherits LayoutComponentBase
+@inject SessionState Session
+@inject NavigationManager Navigation
+
+<div class="page">
+    <div class="sidebar">
+        <NavMenu />
+    </div>
+
+    <main>
+        <div class="top-row">
+            <span>@(Session.CurrentUser is null ? "Chua dang nhap" : $"{Session.CurrentUser.UserName} - {Session.CurrentUser.Role}")</span>
+            @if (Session.IsAuthenticated)
+            {
+                <button class="link-button" @onclick="Logout">Dang xuat</button>
+            }
+        </div>
+
+        <article class="content">
+            @Body
+        </article>
+    </main>
+</div>
+
+@code {
+    private void Logout()
+    {
+        Session.Clear();
+        Navigation.NavigateTo("/login");
+    }
+}

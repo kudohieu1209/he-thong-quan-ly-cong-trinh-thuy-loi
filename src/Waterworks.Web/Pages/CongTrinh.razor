@@ -1,0 +1,208 @@
+@page "/congtrinh"
+@inject ApiClient Api
+
+<PageTitle>Cong trinh</PageTitle>
+
+<section class="page-header">
+    <div>
+        <p class="eyebrow">Quan ly cong trinh</p>
+        <h1>Danh sach cong trinh</h1>
+    </div>
+    <button class="primary-button" @onclick="NewItem">Them cong trinh</button>
+</section>
+
+@if (!string.IsNullOrWhiteSpace(message))
+{
+    <div class="@messageClass">@message</div>
+}
+
+<section class="split-layout">
+    <div class="panel">
+        @if (items is null)
+        {
+            <p>Dang tai danh sach...</p>
+        }
+        else if (items.Count == 0)
+        {
+            <p>Chua co cong trinh nao.</p>
+        }
+        else
+        {
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Ten cong trinh</th>
+                        <th>Ma hieu</th>
+                        <th>Loai</th>
+                        <th>Dia diem</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in items)
+                    {
+                        <tr>
+                            <td>@item.TenCongTrinh</td>
+                            <td>@item.MaHieu</td>
+                            <td>@(item.LoaiCongTrinh ?? "---")</td>
+                            <td>@item.DiaDiem</td>
+                            <td class="row-actions">
+                                <button @onclick="() => EditItem(item)">Sua</button>
+                                <button class="danger-button" @onclick="() => DeleteItemAsync(item.Id)">Xoa</button>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+    </div>
+
+    <div class="panel edit-panel">
+        <h2>@(editingId is null ? "Them cong trinh" : "Sua cong trinh")</h2>
+        <label>
+            Ten cong trinh
+            <input @bind="form.TenCongTrinh" />
+        </label>
+        <label>
+            Ma hieu
+            <input @bind="form.MaHieu" />
+        </label>
+        <label>
+            Dia diem
+            <input @bind="form.DiaDiem" />
+        </label>
+        <label>
+            Nam xay dung
+            <input type="number" @bind="form.NamXayDung" />
+        </label>
+        <label>
+            Trang thai
+            <input @bind="form.TrangThai" />
+        </label>
+        <label>
+            Mo ta
+            <textarea @bind="form.MoTa"></textarea>
+        </label>
+        <div class="form-actions">
+            <button class="primary-button" @onclick="SaveAsync" disabled="@isSaving">Luu</button>
+            <button @onclick="NewItem">Lam moi</button>
+        </div>
+    </div>
+</section>
+
+@code {
+    private IReadOnlyList<CongTrinhDto>? items;
+    private CongTrinhForm form = new() { TrangThai = "Dang hoat dong" };
+    private int? editingId;
+    private string? message;
+    private string messageClass = "info-message";
+    private bool isSaving;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadAsync();
+    }
+
+    private async Task LoadAsync()
+    {
+        items = await Api.GetCongTrinhAsync();
+    }
+
+    private void NewItem()
+    {
+        editingId = null;
+        form = new CongTrinhForm { TrangThai = "Dang hoat dong" };
+        message = null;
+    }
+
+    private void EditItem(CongTrinhDto item)
+    {
+        editingId = item.Id;
+        form = new CongTrinhForm
+        {
+            TenCongTrinh = item.TenCongTrinh,
+            MaHieu = item.MaHieu,
+            DiaDiem = item.DiaDiem,
+            NamXayDung = item.NamXayDung,
+            TrangThai = item.TrangThai,
+            MoTa = item.MoTa
+        };
+        message = null;
+    }
+
+    private async Task SaveAsync()
+    {
+        if (string.IsNullOrWhiteSpace(form.TenCongTrinh))
+        {
+            ShowError("Ten cong trinh la bat buoc.");
+            return;
+        }
+
+        isSaving = true;
+        try
+        {
+            var request = new CongTrinhUpsertRequest(
+                form.TenCongTrinh,
+                form.MaHieu,
+                CapCongTrinhId: null,
+                LoaiCongTrinhId: null,
+                DonViQuanLyId: null,
+                DonViHanhChinhId: null,
+                form.DiaDiem,
+                DuLieuGIS: null,
+                form.NamXayDung,
+                form.MoTa,
+                form.TrangThai,
+                HinhAnh: null);
+
+            await Api.SaveCongTrinhAsync(editingId, request);
+            await LoadAsync();
+            NewItem();
+            ShowInfo("Da luu cong trinh.");
+        }
+        catch (Exception ex)
+        {
+            ShowError($"Khong luu duoc: {ex.Message}");
+        }
+        finally
+        {
+            isSaving = false;
+        }
+    }
+
+    private async Task DeleteItemAsync(int id)
+    {
+        try
+        {
+            await Api.DeleteCongTrinhAsync(id);
+            await LoadAsync();
+            ShowInfo("Da xoa cong trinh.");
+        }
+        catch (Exception ex)
+        {
+            ShowError($"Khong xoa duoc: {ex.Message}");
+        }
+    }
+
+    private void ShowInfo(string text)
+    {
+        message = text;
+        messageClass = "info-message";
+    }
+
+    private void ShowError(string text)
+    {
+        message = text;
+        messageClass = "error-message";
+    }
+
+    private sealed class CongTrinhForm
+    {
+        public string? TenCongTrinh { get; set; }
+        public string? MaHieu { get; set; }
+        public string? DiaDiem { get; set; }
+        public int? NamXayDung { get; set; }
+        public string? TrangThai { get; set; }
+        public string? MoTa { get; set; }
+    }
+}
