@@ -12,8 +12,8 @@ public sealed class ApiClient
 
     public static string DefaultBaseAddress =>
         DeviceInfo.Platform == DevicePlatform.Android
-            ? "http://10.0.2.2:5178"
-            : "http://127.0.0.1:5178";
+            ? "http://10.0.2.2:5188"
+            : "http://127.0.0.1:5188";
 
     public async Task<LoginResponse?> LoginAsync(string userName, string password, CancellationToken cancellationToken = default)
     {
