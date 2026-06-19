@@ -473,7 +473,7 @@ INNER JOIN HoSo ON TaiKhoan.HoSoId = HoSo.Id;
 GO
 
 
--- ViewLichSuTruyCap: Dùng cho WinApp.Views.LichSuTruyCap
+-- ViewLichSuTruyCap: Dung cho man hinh lich su truy cap
 IF OBJECT_ID('ViewLichSuTruyCap', 'V') IS NOT NULL DROP VIEW ViewLichSuTruyCap;
 GO
 CREATE VIEW ViewLichSuTruyCap AS
@@ -494,7 +494,7 @@ GO
 --  NHÓM VIEW CÔNG TRÌNH CHUNG & BẢN ĐỒ 
 -- ============================================================
 
--- ViewCongTrinh: Dùng cho WinApp.Views.CongTrinh (Danh sách tổng)
+-- ViewCongTrinh: Dung cho man hinh danh sach cong trinh
 IF OBJECT_ID('ViewCongTrinh', 'V') IS NOT NULL DROP VIEW ViewCongTrinh;
 GO
 CREATE VIEW ViewCongTrinh AS

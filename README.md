@@ -1,45 +1,38 @@
+# He thong quan ly cong trinh thuy loi
 
+Ban remake theo kien truc:
 
-### Prerequisites
-- Visual Studio 2022 or later
-- .NET Framework 4.7.2 or later
-- SSMS
-- Git
+- `Waterworks.Web`: Blazor WebAssembly client cho trinh duyet.
+- `Waterworks.Api`: ASP.NET Core Web API.
+- `Waterworks.Maui`: .NET MAUI client cho desktop/mobile.
+- `Waterworks.Shared`: DTO/request/response dung chung.
+- `Waterworks.Data`: data access MVP hien dung SQLite local.
 
-### Installation Steps
+## MVP hien co
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/ca-mois/QuanLyCongTrinhThuyLoi
-   ```
+- Dang nhap demo: `admin` / `1234`.
+- Home/menu.
+- Danh sach cong trinh.
+- Them, sua, xoa cong trinh.
+- API CRUD cong trinh.
+- Docker deploy Web + API chung mot service.
 
-2. **Open the solution**
-   - Open Visual Studio
-   - Go to File > Open > Project/Solution
-   - Navigate to the cloned repository folder
-   - Select `WinApp.sln` and click Open
+## Chay local
 
-3. **Restore NuGet packages**
-   - Right-click on the solution in Solution Explorer
-   - Select "Restore NuGet Packages"
-   - Wait for the packages to be restored
+```powershell
+.\.dotnet-local\dotnet.exe run --project src\Waterworks.Api\Waterworks.Api.csproj --urls http://127.0.0.1:5188
+```
 
-4. **Build the solution**
-   - Press Ctrl+Shift+B or go to Build > Build Solution
-   - Wait for the build to complete
+Mo:
 
-5. **Run the application**
-   - Press F5 or click the "Start" button in Visual Studio
-   - The application should now launch
+```text
+http://127.0.0.1:5188
+```
 
-### Troubleshooting
-- If you encounter any build errors, make sure all NuGet packages are properly restored
-- Verify that your MySQL server is running and accessible
-- Check that the connection string in `appsettings.json` matches your database configuration
+## Deploy
 
+Repo co san `Dockerfile` va `render.yaml`. Xem chi tiet trong `DEPLOY.md`.
 
-      <td>Technical Report</td>
-    </tr>
-  </tbody>
-</table>
-# QuanLyCongTrinhThuyLoi
+## Ghi chu
+
+`Database.sql` duoc giu lai lam schema tham khao khi migrate sang PostgreSQL/Neon/Supabase hoac SQL Server.

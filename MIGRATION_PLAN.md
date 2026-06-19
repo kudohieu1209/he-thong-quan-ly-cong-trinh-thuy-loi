@@ -2,21 +2,20 @@
 
 ## Hien trang da inspect
 
-- App cu la WPF .NET Framework 4.7.2 trong `WinApp`, solution cu la `WinApp.sln`.
-- Database cu la SQL Server Express `KTPM`, connection truc tiep qua `WinApp/Models/Migration/Provider.cs`.
+- App goc la WPF .NET Framework 4.7.2. Ban WPF cu da duoc giu trong repo goc, khong dua vao repo remake nay.
+- Database cu la SQL Server Express `KTPM`.
 - Schema goc nam trong `Database.sql`.
-- Menu/quyen nam trong `WinApp/App_Data/Actions.json`.
-- Controller WPF nam trong `WinApp/Controller`, UI nam trong `WinApp/Views`, framework tu viet nam trong `WinApp/VST/MVC`.
+- Menu/quyen, controller va UI WPF cu chi dung lam tham khao tu repo goc.
 
 ## Huong migrate
 
-1. Giu nguyen `WinApp` va `WinApp.sln` de tham chieu va rollback.
-2. Tao solution moi `Waterworks.slnx` canh solution cu.
+1. Tao solution moi `Waterworks.slnx` cho ban remake.
+2. Giu `Database.sql` lam schema tham khao.
 3. Tach client MAUI khoi database: client chi goi HTTPS API.
 4. Dua schema/entity/DTO dung chung vao `Waterworks.Shared`.
 5. Dua truy cap database vao `Waterworks.Data`.
 6. Tao `Waterworks.Api` lam backend ASP.NET Core.
-7. Tao `Waterworks.Maui` lam client moi, khong auto-convert WPF XAML.
+7. Tao `Waterworks.Maui` lam client moi, khong auto-convert UI WPF.
 
 ## Cau truc solution moi
 
