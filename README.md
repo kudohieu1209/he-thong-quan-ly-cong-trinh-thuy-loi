@@ -1,40 +1,45 @@
-# Hệ thống quản lý công trình thủy lợi
 
-Đây là bản remake theo kiến trúc client-server, tách ứng dụng khỏi việc kết nối trực tiếp đến cơ sở dữ liệu.
 
-## Kiến trúc
+### Prerequisites
+- Visual Studio 2022 or later
+- .NET Framework 4.7.2 or later
+- SSMS
+- Git
 
-- `Waterworks.Web`: ứng dụng web Blazor WebAssembly chạy trên trình duyệt.
-- `Waterworks.Api`: ASP.NET Core Web API, xử lý đăng nhập và dữ liệu nghiệp vụ.
-- `Waterworks.Maui`: ứng dụng .NET MAUI cho desktop/mobile.
-- `Waterworks.Shared`: DTO, request, response dùng chung giữa client và API.
-- `Waterworks.Data`: lớp truy cập dữ liệu. MVP hiện dùng SQLite local.
+### Installation Steps
 
-## Chức năng MVP
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/ca-mois/QuanLyCongTrinhThuyLoi
+   ```
 
-- Đăng nhập demo: `admin` / `1234`.
-- Trang Home/Menu.
-- Danh sách công trình.
-- Thêm, sửa, xóa công trình.
-- API CRUD công trình.
-- Docker deploy Web + API chung một service.
+2. **Open the solution**
+   - Open Visual Studio
+   - Go to File > Open > Project/Solution
+   - Navigate to the cloned repository folder
+   - Select `WinApp.sln` and click Open
 
-## Chạy local
+3. **Restore NuGet packages**
+   - Right-click on the solution in Solution Explorer
+   - Select "Restore NuGet Packages"
+   - Wait for the packages to be restored
 
-```powershell
-.\.dotnet-local\dotnet.exe run --project src\Waterworks.Api\Waterworks.Api.csproj --urls http://127.0.0.1:5188
-```
+4. **Build the solution**
+   - Press Ctrl+Shift+B or go to Build > Build Solution
+   - Wait for the build to complete
 
-Mở trình duyệt tại:
+5. **Run the application**
+   - Press F5 or click the "Start" button in Visual Studio
+   - The application should now launch
 
-```text
-http://127.0.0.1:5188
-```
+### Troubleshooting
+- If you encounter any build errors, make sure all NuGet packages are properly restored
+- Verify that your MySQL server is running and accessible
+- Check that the connection string in `appsettings.json` matches your database configuration
 
-## Deploy
 
-Repo có sẵn `Dockerfile` và `render.yaml`. Xem chi tiết trong `docs/DEPLOY.md`.
-
-## Ghi chú
-
-`database/Database.sql` được giữ lại làm schema tham khảo khi migrate sang PostgreSQL/Neon/Supabase hoặc SQL Server.
+      <td>Technical Report</td>
+    </tr>
+  </tbody>
+</table>
+# QuanLyCongTrinhThuyLoi

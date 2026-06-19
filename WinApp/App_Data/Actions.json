@@ -1,0 +1,160 @@
+{
+    "#": {
+        "home": "Trang chủ",
+        "migrate": "Load database",
+        "migrate/csharp": "C#",
+        "migrate/s/model": "Models",
+        "migrate/s/view": "Views",
+        "migrate/s/controller": "Controllers",
+        "migrate/sql": "SQL",
+        "migrate/s/proc": "Procedures",
+        "taikhoan": "Quản lý tài khoản",
+        "hanhchinh": "Quản lý hành chính",
+        "hanhchinh/huyen": "Đơn vị cấp huyện",
+        "hanhchinh/xa": "Đơn vị cấp xã",
+
+        "congtrinh": "Công trình thủy lợi",
+        "congtrinh/index": "Danh sách công trình",
+        "congtrinh/chitiet": "Chi tiết kỹ thuật",
+        "lichsubaotri/index": "Lịch sử bảo trì",
+        "nhatkyvanhanh/index": "Nhật ký vận hành",
+        "vanbanphaply/index": "Văn bản pháp lý",
+        "bando/index": "Bản đồ phân bố công trình",
+
+        "chitiethochua": "Quản lý Hồ chứa",
+        "chitiethochua/index": "Danh sách Hồ chứa",
+        "chitietdaptran": "Quản lý Đập tràn",
+        "chitietdaptran/index": "Danh sách Đập tràn",
+        "chitietkenhmuong": "Quản lý Kênh mương",
+        "chitietkenhmuong/index": "Danh sách Kênh mương",
+        "chitietduongong": "Quản lý Đường ống",
+        "chitietduongong/index": "Danh sách Đường ống",
+        "chitietke": "Quản lý Kè",
+        "chitietke/index": "Danh sách Kè",
+        "chitiettrambom": "Quản lý Trạm bơm",
+        "chitiettrambom/index": "Danh sách Trạm bơm",
+
+        "ketquatuoi": "Kết quả tưới tiêu",
+        "ketquatuoi/index": "Danh sách kết quả tưới",
+        "vumua": "Quản lý Vụ mùa",
+        "vumua/index": "Danh sách Vụ mùa",
+
+        "thongke": "Báo cáo thống kê tưới",
+        "thongke/sosanhtheovu": "So sánh theo Vụ",
+        "thongke/sosanhtheohuyen": "So sánh các Huyện",
+        "thongke/sosanhtheoxa": "So sánh các Xã",
+        "thongke/tonghoptoantinh": "Tổng hợp toàn Tỉnh",
+
+        "thongkecongtrinh": "Thống kê số lượng CT",
+        "thongkecongtrinh/theoloai": "Theo Loại công trình",
+        "thongkecongtrinh/theocap": "Theo Cấp công trình",
+        "thongkecongtrinh/theohuyen": "Theo Huyện",
+        "thongkecongtrinh/theoxa": "Theo Xã",
+        "thongkecongtrinh/toantinh": "Tổng hợp toàn Tỉnh",
+
+        "kyquyhoach/index": "Kỳ quy hoạch",
+        "loaicongtrinh/index": "Loại công trình",
+        "capcongtrinh/index": "Cấp công trình",
+        "tailieu/index": "Kho tài liệu chung",
+        "lichsutruycap/index": "Lịch sử truy cập",
+        "me/changepass": "Đổi mật khẩu",
+        ".": ""
+    },
+    "actors": {
+        "Developer": {
+            "home": {
+                "Childs": [
+                    {
+                        "Text": "Database",
+                        "Refs": [ "migrate" ]
+                    }
+                ]
+            },
+            "migrate/csharp": {
+                "Childs": [
+                    {
+                        "Text": "Project",
+                        "Refs": [ "migrate/s/model", "migrate/s/controller", "migrate/s/view" ]
+                    }
+                ]
+            },
+            "migrate/sql": {
+                "Childs": [
+                    {
+                        "Text": "Project",
+                        "Refs": [ "migrate/s/proc" ]
+                    }
+                ]
+            }
+        },
+        "Admin": {
+            "home": {
+                "Childs": [
+                    {
+                        "Text": "Người dùng",
+                        "Refs": [ "taikhoan", "lichsutruycap/index" ]
+                    },
+                    {
+                        "Text": "Hành chính",
+                        "Refs": [ "hanhchinh", "hanhchinh/huyen", "hanhchinh/xa" ]
+                    },
+                    {
+                        "Text": "Tài liệu",
+                        "Refs": [ "tailieu/index", "vanbanphaply/index" ]
+                    },
+                    {
+                        "Text": "Profile",
+                        "Refs": [ "me/changepass" ]
+                    }
+                ]
+            },
+            "congtrinh": {
+                "Childs": [
+                    {
+                        "Text": "Phân loại & phân cấp",
+                        "Refs": [ "loaicongtrinh/index", "capcongtrinh/index"]
+                    },
+                    {
+                        "Text": "Quản lý công trình",
+                        "Refs": [ "congtrinh/index", "bando/index" ]
+                    },
+                    {
+                        "Text": "Chi tiết kỹ thuật",
+                        "Refs": [ "chitiethochua/index", "chitietdaptran/index", "chitietkenhmuong/index", "chitietduongong/index", "chitietke/index", "chitiettrambom/index" ]
+                    },
+                    {
+                        "Text": "Quản lý & Vận hành",
+                        "Refs": [ "kyquyhoach/index", "nhatkyvanhanh/index", "lichsubaotri/index" ]
+                    },
+                    {
+                        "Text": "Thống kê số lượng công trình",
+                        "Refs": [
+                            "thongkecongtrinh/theoloai",
+                            "thongkecongtrinh/theocap",
+                            "thongkecongtrinh/theohuyen",
+                            "thongkecongtrinh/theoxa",
+                            "thongkecongtrinh/toantinh"
+                        ]
+                    }
+                ]
+            },
+            "ketquatuoi": {
+                "Childs": [
+                    {
+                        "Text": "Quản lý",
+                        "Refs": [ "ketquatuoi/index", "vumua/index" ]
+                    },
+                    {
+                        "Text": "Báo cáo thống kê",
+                        "Refs": [
+                            "thongke/sosanhtheovu",
+                            "thongke/sosanhtheohuyen",
+                            "thongke/sosanhtheoxa",
+                            "thongke/tonghoptoantinh"
+                        ]
+                    }
+                ]
+            }
+        }
+    }
+}
